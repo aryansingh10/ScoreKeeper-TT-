@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Keeper</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        .winner{
+            color: green;
+        }
+        .loser{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-half is-offset-1 is-one-third">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-2by1">
+                            <img src="data:image/jpeg;base64,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">
+                        </figure>
+                    </div>
+                    <header class="card-header">
+                      <p class="card-header-title">
+                        Ping Pong scorekeeper
+                      </p>
+                      <button class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </header>
+                    <div class="card-content">
+                      <div class="content">
+                        <h1 class="title is-1"><span id="P1Display">   0 </span> to <span id="P2Display">   0 </span></h1>
+                      <p class="subtitle">Use below button to keep scores</p>
+                      <label for="isGameof" class="is-large is-inline"><b>Playing To</b></label>
+                      <div class="select is-rounded">
+                        <select name="" id="isGameof">
+                        <option value="1">1</option>
+                        <option value="5">5</option>
+                        <option value="7">7</option>
+                        <option value="21">21</option>
+                        <option value="51">51</option>
+                    </select></div>
+                    </div>
+                    </div>
+                    <footer class="card-footer">
+                     <button class="is-primary button card-gooter-item"id="P1Button">Player-1(+1)</button>
+                     <button class="is-info button card-gooter-item"id="P2Button">Player-2(+1)</button>
+                     <button class="is-danger button card-gooter-item"id="reset">Reset</button>
+                      
+                    </footer>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+   
+    
+    
+    <script src="scorekeeper.js"></script>
+</body>
+</html>
